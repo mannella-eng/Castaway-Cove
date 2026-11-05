@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castaways Cove Presents: MUSA Futsal Tournament Series 2026</title>
+    <style>
+        :root {
+            --primary: #0a4b7c;
+            --secondary: #d4af37;
+            --light: #f7f9fc;
+            --dark: #222222;
+            --success: #1b6648;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background: var(--light); color: var(--dark); padding: 20px; line-height: 1.6; }
+        .container { max-width: 800px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .header { text-align: center; margin-bottom: 30px; border-bottom: 3px solid var(--primary); padding-bottom: 20px; }
+        .header h1 { color: var(--primary); font-size: 1.8rem; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .header p { color: #555; font-size: 1.05rem; font-weight: 600; }
+        .notice-banner { background: #e3f2fd; color: #0d47a1; padding: 12px; border-radius: 4px; margin-bottom: 25px; border-left: 4px solid #90caf9; font-size: 0.9rem; }
+        h2 { color: var(--primary); font-size: 1.3rem; margin-bottom: 15px; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+        .form-section { margin-bottom: 30px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media(max-width: 600px) { .form-grid { grid-template-columns: 1fr; } }
+        .form-group { margin-bottom: 15px; }
+        .form-group.full-width { grid-column: span 2; }
+        @media(max-width: 600px) { .form-group.full-width { grid-column: span 1; } }
+        label { display: block; margin-bottom: 6px; font-weight: 600; font-size: 0.9rem; color: #444; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 0.95rem; transition: border 0.2s; }
+        input:focus, select:focus { outline: none; border-color: var(--primary); }
+        
+        /* Contact Informational Display Box */
+        .contact-box { background: #fdfae6; border: 1px solid #faebcc; padding: 20px; border-radius: 6px; text-align: center; margin-top: 10px; }
+        .contact-box p { font-size: 1.1rem; color: #333; margin-bottom: 5px; }
+        .contact-box a { color: var(--primary); font-weight: bold; text-decoration: none; font-size: 1.25rem; }
+        .contact-box a:hover { text-decoration: underline; }
+
+        .btn { display: inline-block; padding: 10px 20px; border: none; border-radius: 4px; font-weight: 600; cursor: pointer; transition: background 0.2s; font-size: 0.9rem; }
+        .btn-primary { background: var(--primary); color: #fff; width: 100%; padding: 14px; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; }
+        .btn-primary:hover { background: #063354; }
+        .btn-secondary { background: #e0e0e0; color: var(--dark); }
+        
+        /* Modal Popup */
+        .modal-overlay { display: none; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; z-index: 1000; }
+        .modal { background: #fff; padding: 40px; border-radius: 8px; max-width: 500px; width: 90%; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); }
+        .modal h2 { color: var(--success); border: none; font-size: 1.8rem; margin-bottom: 10px; }
+        .code-box { background: var(--light); border: 2px dashed var(--secondary); padding: 15px; font-family: monospace; font-size: 1.4rem; font-weight: bold; letter-spacing: 2px; margin: 20px 0; color: var(--primary); }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>Castaways Cove Presents</h1>
+        <p>MUSA Futsal Tournament Series 2026</p>
+    </div>
+
+    <div class="notice-banner">
+        <strong>Tournament Information:</strong> Secure, direct entry form. No credit card or entry fee is required to submit your placeholder registration online.
+    </div>
+
+    <form id="registrationForm">
+        <!-- Section 1: Tournament Selection -->
+        <div class="form-section">
+            <h2>1. Tournament Selection</h2>
+            <div class="form-group">
+                <label for="tournament">Select Age Group & Date Option</label>
+                <select id="tournament" required>
+                    <option value="">-- Select one of our 27 Tournament Options --</option>
+                    <!-- 27 distinct sequential tournament dates injected via JavaScript below -->
+                </select>
+            </div>
+        </div>
+
+        <!-- Section 2: Team & Coach Details -->
+        <div class="form-section">
+            <h2>2. Team & Coach Details</h2>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="teamName">Team Name</label>
+                    <input type="text" id="teamName" required placeholder="e.g., MUSA Elite">
+                </div>
+                <div class="form-group">
+                    <label for="clubAffiliation">Club Affiliation</label>
+                    <input type="text" id="clubAffiliation" required placeholder="e.g., MUSA Soccer Academy">
+                </div>
+                <div class="form-group">
+                    <label for="coachName">Head Coach Name</label>
+                    <input type="text" id="coachName" required placeholder="Coach Name">
+                </div>
+                <div class="form-group">
+                    <label for="coachEmail">Coach Email Address</label>
+                    <input type="email" id="coachEmail" required placeholder="coach@example.com">
+                </div>
+                <div class="form-group full-width">
+                    <label for="coachPhone">Coach Phone Number</label>
+                    <input type="tel" id="coachPhone" required placeholder="(255) 555-5555">
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 3: Contact Support -->
+        <div class="form-section">
+            <h2>3. Support & Inquiries</h2>
+            <div class="contact-box">
+                <p>If you need anything, feel free to call or text:</p>
+                <a href="tel:258175993">Dan at 25 817 5993</a>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="btn btn-primary">Complete Tournament Registration</button>
+    </form>
+</div>
+
+<!-- Success Popup Frame -->
+<div class="modal-overlay" id="successModal">
+    <div class="modal">
+        <h2>Registration Complete!</h2>
+        <p>Your team reservation has been successfully sent. Keep your registration tracking code for reference:</p>
+        <div class="code-box" id="confirmationCode">MUSA-000000</div>
+        <p style="font-size: 0.85rem; color: #666; margin-bottom: 20px;">Dan has been notified of your entry details. No balance is due.</p>
+        <button type="button" class="btn btn-secondary" onclick="closeModal()">Close & Return</button>
+    </div>
+</div>
+
+<script>
+    // Explicit 27 Tournament Options Generation Array matching November 2026 - March 2027
+    const optionsData = [
+        "Nov 7-8, 2026 - U9/U10 Boys & Girls Open",
+        "Nov 14-15, 2026 - U11/U12 Boys Premier Division",
+        "Nov 14-15, 2026 - U11/U12 Girls Premier Division",
+        "Nov 21-22, 2026 - U13/U14 Boys Championship",
+        "Nov 21-22, 2026 - U13/U14 Girls Championship",
+        "Nov 28-29, 2026 - Thanksgiving Futsal Classic (All Ages)",
+        "Dec 5-6, 2026 - U15/U16 High School Showcase (Boys)",
+        "Dec 5-6, 2026 - U15/U16 High School Showcase (Girls)",
+        "Dec 12-13, 2026 - U17/U19 Varsity Winter Invite (Boys)",
+        "Dec 12-13, 2026 - U17/U19 Varsity Winter Invite (Girls)",
+        "Dec 19-20, 2026 - Holiday Futsal Jamboree (Coed Local)",
+        "Dec 26-27, 2026 - Post-Christmas Indoor Blast (U10-U14)",
+        "Jan 2-3, 2027 - New Year Kickoff - U11/U12 Boys & Girls",
+        "Jan 9-10, 2027 - Winter Frost Cup - U13/U14 Elite",
+        "Jan 16-17, 2027 - MLK Weekend Futsal Invitational (All Flights)",
+        "Jan 23-24, 2027 - High School Varsity Series - Flight A",
+        "Jan 30-31, 2027 - High School Varsity Series - Flight B",
+        "Feb 6-7, 2027 - Mid-Winter Classic - U9/U10 Juniors",
+        "Feb 13-14, 2027 - Valentine Futsal Challenge - U11/U12",
+        "Feb 20-21, 2027 - Presidents Day Futsal Gold Cup",
+        "Feb 27-28, 2027 - Regional Futsal Qualifier - U13/U14 Boys",
+        "Feb 27-28, 2027 - Regional Futsal Qualifier - U13/U14 Girls",
+        "Mar 6-7, 2027 - March Madness Futsal Open (High School)",
+        "Mar 13-14, 2027 - Spring Prep Futsal Series - U11/U12",
+        "Mar 20-21, 2027 - Spring Prep Futsal Series - U13/U14",
+        "Mar 27-28, 2027 - MUSA Series Grand Finale (Boys Flights)",
+        "Mar 27-28, 2027 - MUSA Series Grand Finale (Girls Flights)"
+    ];
+
+    const selectElement = document.getElementById('tournament');
+    optionsData.forEach((text, index) => {
+        const option = document.createElement('option');
+        option.value = `MUSA-OPT-${index + 1}`;
+        option.textContent = `Option #${index + 1}: ${text}`;
+        selectElement.appendChild(option);
+    });
+
+    // Auto-save form progress into LocalStorage cache
+    const inputFields = ['tournament', 'teamName', 'clubAffiliation', 'coachName', 'coachEmail', 'coachPhone'];
+    inputFields.forEach(id => {
+        const field = document.getElementById(id);
+        field.addEventListener('input', () => {
+            localStorage.setItem(`musa_2026_${id}`, field.value);
+        });
+    });
+
+    // Load cached values back on user entry
+    window.addEventListener('DOMContentLoaded', () => {
+        inputFields.forEach(id => {
